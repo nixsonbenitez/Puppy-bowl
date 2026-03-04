@@ -1,0 +1,109 @@
+
+/*These are just some of my notes*/
+/*The code below handles the UI for the buttons, outline and button colors*/
+/*Over flow y was super cool to learn, there was to man dogs and this helped a lot*/
+.puppies {
+    max-height: 600px;
+    overflow-y: scroll;
+    border: 1px  solid rgb(189, 189, 189);
+    border-radius: 20px;
+    padding: 5px;
+}
+.puppies li {
+    list-style: none;
+    border: 1px solid rgb(206, 206, 206);
+    background-color: antiquewhite;
+    border-radius: 8px; 
+    padding: 10px;
+    margin: 1%;
+    
+}
+.puppies li:hover{
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.puppies li a{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+/* this handles the images curves and width for the dogs selected*/
+#selected img {
+    width: 400px;
+    border-radius: 20px;
+}
+
+
+/* this handles the front end for each dog card*/
+#selected section{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    background-color: rgb(253, 246, 237)  ;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+}
+
+/* this centers the items in its own column*/
+/* this css also handles the information especially centering title and align left for the info of each dog*/
+#selected{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#selected img {
+    width: 300px;
+}
+
+#selected h3{
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+#selected p {
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    margin: 4px 0;
+}
+/* the css below organizes the rest of the elements*/
+ /* the css below organizes the rest of the elements*/
+
+body {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  gap: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 1ch;
+  padding: 0 1rem;
+}
+
+label {
+  display: grid;
+}
+
+/*This allows for the elements to be responsive to the users */
+@media (width >= 600px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
