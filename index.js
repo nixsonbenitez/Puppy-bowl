@@ -1,6 +1,6 @@
 // === Constants ===
 const BASE = "https://fsa-puppy-bowl.herokuapp.com/api";
-const COHORT = "/2512-FTB-CT-WEB-PT"; // Make sure to change this!
+const COHORT = "/2512-FTB-CT-WEB-PT"; 
 const API = BASE + COHORT;
 
 // State
@@ -9,7 +9,7 @@ let selectedPup;
 let teams = [];
 let puppies = [];
 
-//This will update the state with all the players
+//This will fetch our data 
 async function getPuppies(){
     try{
         const response = await fetch(`${API}/players`);
@@ -63,8 +63,6 @@ async function removeDog(id){
 
 //UI Componenets//
 
-
-
 //this is going to show a list of all the dogs out there, 
 function listPuppy(){
     const $ul = document.createElement("ul");
@@ -91,6 +89,7 @@ function Puppy(dog) {
     return $li;
 }
 
+//the will fetch the data of the single dog in our api
 async function getPuppy(id){
     try{
         const response = await fetch(`${API}/players/${id}`);
@@ -111,7 +110,7 @@ function SelectedPup (){
         return $p;
     }
     
-// this will pop up as soon as the dog is selected, this will show all the details
+// this will display in our front end as soon as the dogs data is rendered , this will show all the details
 const $dog = document.createElement("section");
 $dog.innerHTML = `
     <h3>${selectedPup.name}</h3>
@@ -121,7 +120,7 @@ $dog.innerHTML = `
     <p><strong>Status:</strong> ${selectedPup.status}</p>
     <button> Remove from roster </button>
 `;
-//this will remove dogs from the roster
+//this will remove dogs from the roster (front end)
 const $delete = $dog.querySelector("button");
 $delete.addEventListener("click", () => removeDog(selectedPup.id));
 return $dog;
@@ -169,7 +168,7 @@ function puppyForm(){
     return $form;
 }
 // This is the Render portion and will bring out
-// our front end and front end components
+// our front end and back end components
 function render(){
     const $app = document.querySelector("#app");
     $app.innerHTML = `
